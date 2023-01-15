@@ -6,7 +6,8 @@
 }
 html{
     scroll-behavior: smooth;
-  
+    width: 100vw;
+   
 }
 body{
     overflow-x: hidden;
@@ -149,13 +150,19 @@ nav a {
 /* header */
 header { 
     height: 706px;
+    display: grid;
+    grid-template-columns:1fr 656px 460px 1fr
+}
+header > *{
     padding-top: 120px;
-    background: linear-gradient(to right, white 55.9375%, #F1EADC 44.0625%);
-
+}
+.orangeBg{
+    background-color: #F1EADC;
 }
 .headerInfo {
     margin-top: 145px;
     position: relative;
+    grid-column-start: 2;
 }
 .headerInfo h1, .headerInfo p {
     margin-bottom: 56px;
@@ -171,6 +178,7 @@ header {
     text-align: right;
     letter-spacing: 0.02em;
 }
+
 .openShopButton {
     display: grid;
     grid-template-columns: 67px 243px;
@@ -201,17 +209,23 @@ header {
     background-color: #5f888b;
 }
 .headerImg{
+    grid-column-start: 3;
+    padding-left: 50px;
+    padding-bottom: 60px;
+    position: relative;
+}
+.headerImg .slider{
     position: relative;
 }
 .headerImg::before {
     content: url("./img/PhotoBefore.jpg");
     position: absolute;
     bottom: -3px;
-    left: -130px;
+    left: -80px;
     z-index: 1;
 }
 
-.headerImg::after {
+.headerImg .slider::after {
     content: url("./img/PhotoAfter.jpg");
     position: absolute;
     top: 123px;
