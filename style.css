@@ -1,4 +1,7 @@
 /* общее */
+:root{
+    font-size:16px
+}
 * {
     margin:0;
     letter-spacing: 0.02em;
@@ -6,15 +9,15 @@
 }
 html{
     scroll-behavior: smooth;
-    width: 100vw;
-   
 }
 body{
     overflow-x: hidden;
 }
-
+img{
+    width: 100%;
+}
 p{
-    font-size: 17px;
+    font-size: 1.0625em;
     line-height: 140%;
 }
 section p{
@@ -22,22 +25,22 @@ section p{
 }
 h1 {
     font-weight: 500;
-    font-size: 55px;
+    font-size: 3.4em;
     line-height: 110%;
 }
 h2{
     font-weight: 500;
-    font-size: 40px;
+    font-size: 2.5em;
     line-height: 110%;
 }
 h4{
     font-weight: 500;
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 140%;
 }
 h3{
     font-weight: 500;
-    font-size: 25px;
+    font-size: 1.5em;
     line-height: 140%;  
 }
 a {
@@ -45,7 +48,7 @@ a {
     color: black;
     transition: all 0.3s;
     position: relative;
-    
+    font-size: 1.0625em;
 }
 a:hover {
     color:#6E9C9F;
@@ -67,8 +70,6 @@ a:not(.btn):hover::after {
     max-width: 1110px;
     margin-right: auto;
     margin-left: auto;
-    width: 100%;
-    height: 100%;
 }
 .flex {
     display:flex;
@@ -83,6 +84,10 @@ header, section {
     margin-bottom: 130px;
 }
 /* slider */
+.slider{
+    max-width:100%;
+    min-width: 0px;
+}
 .slick-dots li{
 width:35px
 }
@@ -149,31 +154,31 @@ nav a {
 }
 /* header */
 header { 
-    height: 706px;
+    max-height: 706px;
     display: grid;
-    grid-template-columns:1fr 656px 460px 1fr
+    grid-template-columns:1fr  minmax(max-content, 656px) minmax(max-content, 460px) 1fr
 }
+
 header > *{
     padding-top: 120px;
 }
-.orangeBg{
-    background-color: #F1EADC;
-}
+
 .headerInfo {
     margin-top: 145px;
+    padding-left: 15px;
+    padding-right: 15px;
     position: relative;
-    grid-column-start: 2;
+    grid-area: 1 / 2 ;
 }
 .headerInfo h1, .headerInfo p {
     margin-bottom: 56px;
 }
 .headerInfo h1 {
-    width: 585px;
-    font-size: 55px;
+    max-width: 585px;
 }
 .headerInfo p {
-    width: 385px;
-    font-size: 20px;
+    max-width: 385px;
+    font-size: 1.25em;
     line-height: 140%;
     text-align: right;
     letter-spacing: 0.02em;
@@ -188,7 +193,9 @@ header > *{
 }
 .openShopButton a:first-child {
     background-color: #F1F6F6;
-
+}
+.openShopButton a:first-child img{
+    width: auto;
 }
 .openShopButton a:first-child:hover {
     background-color: #dfe6e6;
@@ -197,7 +204,6 @@ header > *{
 .openShopButton a {
     background-color: #6E9C9F;
     text-align: center;
-    font-size: 17px;
     line-height: 138.9%;
     letter-spacing: 0.02em;
     color: #FFFFFF;
@@ -209,11 +215,14 @@ header > *{
     background-color: #5f888b;
 }
 .headerImg{
-    grid-column-start: 3;
-    padding-left: 50px;
+    grid-area: 1 / 3 ;
     padding-bottom: 60px;
+    padding-left:50px;
     position: relative;
+    height: auto;
+    background-color: #F1EADC;
 }
+
 .headerImg .slider{
     position: relative;
 }
@@ -224,19 +233,23 @@ header > *{
     left: -80px;
     z-index: 1;
 }
-
-.headerImg .slider::after {
+.headerImg::after {
     content: url("./img/PhotoAfter.jpg");
     position: absolute;
-    top: 123px;
+    top: 246px;
     right: -105px;
     z-index: 1;
 } 
+.orangeLeft{
+    background-color: #F1EADC;
+    grid-area: 1 / 4 ;
+}
+
 .slider-for{
-    width:410px
+    max-width:410px
 }
 .slider-nav{
-    width: 563px;
+    max-width: 563px;
 }
 /*Секция новая Коллекция*/
 section h2{
@@ -245,15 +258,17 @@ section h2{
 .cataloge {
     margin-bottom: 65px;
     text-align:center ;
+    
 }
 .catalogeItem{
     position: relative;
+    margin-bottom: 24px;
 }
 .opacityBg{
     position: absolute;
     
-    width: 350px;
-    height: 478px;
+    width: 100%;
+    height: 100%;
     top: 0px;
     left:0px;
     z-index: 1;
@@ -275,8 +290,11 @@ section h2{
     opacity: 1;
 }
 .cataloge a{
-    margin-bottom: 24px;
+    display: block;
     
+}
+.cataloge img{
+    display:block 
 }
 .cataloge h4{
     margin-bottom: 7px;
@@ -301,12 +319,15 @@ section h2{
     height: 100%;
     align-items: center;
     justify-content: center;
-    font-size: 17px;
     line-height: 138.9%;
     color:inherit;
 }
 
 /*Секция описание компании*/
+.description{
+    gap: 30px;
+}
+
 .description img{
     margin-bottom:37px;
     width: 61px;
@@ -316,7 +337,8 @@ section h2{
     margin-bottom:24px;
 }
 .description p{
-    width:305px;
+    max-width:305px;
+    
 }
 
 /*Секция описание команды*/
@@ -324,7 +346,7 @@ section h2{
     width: 729px;
 }
 .sliderInfo {
-    width: 255px;
+    max-width: 255px;
     padding: 78px 0px;
 }
 
@@ -347,7 +369,7 @@ footer {
     gap: 6px;
 }
 footer p:not(.logo, .email) {
-    font-size: 13px;
+    font-size: 0.8em;
     line-height: 140%;
 }
 .navLinks{
@@ -371,13 +393,45 @@ footer .container{
     text-align: right;
 }
 .email{
-    font-size: 15px;
+    font-size: 0.9em;
     margin-top: 9px;
 }
 .social {
-    min-width: 90px;
+    width: 90px;
 }
 img[src="./img/visa-mastercard 1.png"] {
     width: 68px;
     height: 22px;
 }
+/* adaptive */
+@media (max-width: 1100px){
+    header{
+        grid-template-columns: 0 min-content minmax(min-content,1fr) 0;
+
+    }
+    .headerInfo {
+        margin-top: 145px;
+        padding-left: 0px;
+        padding-right: 0px
+    }
+    
+    .orangeLeft{
+        display: none;
+    }
+   
+}
+/* @media (max-width: 975px){
+    .description{
+        flex-direction:column;
+        align-items:center; 
+    }
+    .description > div{
+        width: max-content;
+    }
+} */
+@media (max-width: 1345px) { 
+    .headerImg::after, .headerImg::before {
+        display: none;
+    } 
+    
+ }
