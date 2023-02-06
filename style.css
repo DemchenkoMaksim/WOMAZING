@@ -67,7 +67,8 @@ a:not(.btn):hover::after {
 	width: 100%; 
 }
 .container{
-    max-width: 1110px;
+    max-width: 1100px;
+    padding: 0 5px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -82,10 +83,11 @@ a:not(.btn):hover::after {
 }
 header, section {
     margin-bottom: 130px;
+    
 }
 /* slider */
 .slider{
-    max-width:100%;
+    width:100%;
     min-width: 0px;
 }
 .slick-dots li{
@@ -103,7 +105,10 @@ width:35px
 .slider-nav .slick-dots{
     position: absolute;
     bottom: 26px;
-    margin-left: -35px;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+
 }
 .single-item .slick-dots{
     bottom: 61px;
@@ -154,27 +159,22 @@ nav a {
 }
 /* header */
 header { 
-    max-height: 706px;
-    display: grid;
-    grid-template-columns:1fr  minmax(max-content, 656px) minmax(max-content, 460px) 1fr
-}
-
-header > *{
+    max-height: 826px;
+    background: linear-gradient(to left, #F1EADC 45%  ,#F1EADC 460px, white 460px 55%);
     padding-top: 120px;
+    height: calc(100vh - 120px);
 }
 
 .headerInfo {
-    margin-top: 145px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 145px 0px;
+    
     position: relative;
-    grid-area: 1 / 2 ;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
 }
-.headerInfo h1, .headerInfo p {
-    margin-bottom: 56px;
-}
-.headerInfo h1 {
-    max-width: 585px;
+.headerInfo h1{
+   margin-bottom: 56px;
 }
 .headerInfo p {
     max-width: 385px;
@@ -183,7 +183,6 @@ header > *{
     text-align: right;
     letter-spacing: 0.02em;
 }
-
 .openShopButton {
     display: grid;
     grid-template-columns: 67px 243px;
@@ -214,13 +213,12 @@ header > *{
 .openShopButton a:last-child:hover{
     background-color: #5f888b;
 }
+.headerImg img{
+    min-width: 1px;
+}
 .headerImg{
-    grid-area: 1 / 3 ;
     padding-bottom: 60px;
-    padding-left:50px;
     position: relative;
-    height: auto;
-    background-color: #F1EADC;
 }
 
 .headerImg .slider{
@@ -240,11 +238,6 @@ header > *{
     right: -105px;
     z-index: 1;
 } 
-.orangeLeft{
-    background-color: #F1EADC;
-    grid-area: 1 / 4 ;
-}
-
 .slider-for{
     max-width:410px
 }
@@ -258,7 +251,7 @@ section h2{
 .cataloge {
     margin-bottom: 65px;
     text-align:center ;
-    
+    gap: 10px;
 }
 .catalogeItem{
     position: relative;
@@ -338,12 +331,11 @@ section h2{
 }
 .description p{
     max-width:305px;
-    
 }
 
 /*Секция описание команды*/
 .single-item{
-    width: 729px;
+    max-width: 729px;
 }
 .sliderInfo {
     max-width: 255px;
@@ -404,21 +396,70 @@ img[src="./img/visa-mastercard 1.png"] {
     height: 22px;
 }
 /* adaptive */
-@media (max-width: 1100px){
-    header{
-        grid-template-columns: 0 min-content minmax(min-content,1fr) 0;
-
-    }
-    .headerInfo {
-        margin-top: 145px;
-        padding-left: 0px;
-        padding-right: 0px
-    }
-    
-    .orangeLeft{
-        display: none;
+@media (max-width: 985px){
+    :root{
+        font-size: 15px;
+    }       
+    .headerInfo{
+        max-width: 500px ;
     }
    
+}
+@media (max-width: 920px){
+    :root{
+        font-size: 14px;
+    }       
+    .headerInfo{
+        max-width: 400px ;
+    }
+   
+}
+@media (max-width: 845px){
+    .headerImg{
+        display: none;
+    }
+    .headerInfo{
+        max-width: 100%;
+        text-align: center;
+    }
+    .headerInfo p{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .openShopButton{
+        margin: 0 auto;
+    }
+    header .container{
+        justify-content: center;
+    }
+    header{
+        background: linear-gradient(to left, #F1EADC 50%  , white 50%);
+    }
+    
+}
+@media (max-width: 625px){
+    section > h2{
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    .cataloge, .description{
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    .cataloge > div, .description > div{
+        margin: 0 auto;
+    }
+    .team{
+        flex-wrap:wrap ;
+        text-align: center;
+    }
+    .sliderInfo{
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    .teamSection{
+        margin-bottom: 0px;
+    }
 }
 /* @media (max-width: 975px){
     .description{
