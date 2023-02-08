@@ -479,8 +479,13 @@ img[src="./img/visa-mastercard 1.png"] {
     }
 }
 @media (max-width: 540px){
-    .navLinks{
+    footer > .container > div {
         width: min-content;
+    }
+    .contacts{
+        margin: 0px;
+    }
+    .navLinks{
         margin: 0px auto;
     }
     .navLinks > * {
