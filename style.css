@@ -93,6 +93,9 @@ header, section {
 .slick-dots li{
 width:35px
 }
+.slick-dotted.slick-slider{
+    margin-bottom: 0px;
+}
 .slick-dots li button:before {
     width: 30px;
     height: 4px;
@@ -159,10 +162,10 @@ nav a {
 }
 /* header */
 header { 
-    max-height: 826px;
+    
     background: linear-gradient(to left, #F1EADC 45%  ,#F1EADC 460px, white 460px 55%);
     padding-top: 120px;
-    height: calc(100vh - 120px);
+    
 }
 
 .headerInfo {
@@ -213,12 +216,10 @@ header {
 .openShopButton a:last-child:hover{
     background-color: #5f888b;
 }
-.headerImg img{
-    min-width: 1px;
-}
 .headerImg{
     padding-bottom: 60px;
     position: relative;
+    width: 410px;
 }
 
 .headerImg .slider{
@@ -234,13 +235,11 @@ header {
 .headerImg::after {
     content: url("./img/PhotoAfter.jpg");
     position: absolute;
-    top: 246px;
+    top: 123px;
     right: -105px;
     z-index: 1;
 } 
-.slider-for{
-    max-width:410px
-}
+
 .slider-nav{
     max-width: 563px;
 }
@@ -351,7 +350,7 @@ section h2{
 
 /*footer*/
 footer {
-    height: 161px;
+    height: 165px;
     padding: 101px 0;
     background-color: #F1EADC;
 }
@@ -365,7 +364,8 @@ footer p:not(.logo, .email) {
     line-height: 140%;
 }
 .navLinks{
-    margin-left: 36px;
+    margin-left: 81px;
+    width: 400px;
 }
 .clothes {
     display: flex;
@@ -374,15 +374,14 @@ footer p:not(.logo, .email) {
 }
 footer .container{
     display: flex;
+    height: 100%;
 }
-.navLinks > * {
-    margin-left: 45px;
-   
-}
+
 .contacts{
     margin-left: auto;
     align-items:flex-end;
     text-align: right;
+    
 }
 .email{
     font-size: 0.9em;
@@ -412,7 +411,8 @@ img[src="./img/visa-mastercard 1.png"] {
     .headerInfo{
         max-width: 400px ;
     }
-   
+    
+    
 }
 @media (max-width: 845px){
     .headerImg{
@@ -435,7 +435,24 @@ img[src="./img/visa-mastercard 1.png"] {
     header{
         background: linear-gradient(to left, #F1EADC 50%  , white 50%);
     }
+
+    .navLinks{
+        margin: 0px;
+    }
     
+}
+@media (max-width: 768px){
+    .navLinks{
+        flex-wrap: wrap;
+        margin-left: 40px;
+    }
+    .navLinks > * {
+        flex-basis: 50%;
+    }
+    .navLinks > div{
+        height: 130px;
+        margin-bottom: 20px;
+    }
 }
 @media (max-width: 625px){
     section > h2{
@@ -459,6 +476,25 @@ img[src="./img/visa-mastercard 1.png"] {
     }
     .teamSection{
         margin-bottom: 0px;
+    }
+}
+@media (max-width: 540px){
+    .navLinks{
+        width: min-content;
+        margin: 0px auto;
+    }
+    .navLinks > * {
+        flex-basis: 100%;
+    }
+    .navLinks > div{
+        height: auto;
+        margin: 0px;
+    }
+    .navLinks :nth-child(3){
+        width: max-content;
+    }
+    .clothes{
+        display: none;
     }
 }
 /* @media (max-width: 975px){
