@@ -16,6 +16,9 @@ body{
 img{
     width: 100%;
 }
+li {
+	list-style-type: none;
+}
 p{
     font-size: 1.0625em;
     line-height: 140%;
@@ -132,19 +135,58 @@ width:35px
     transform: rotate(180deg);
 }
 /* nav */
-#nav {
+#navbar {
     position: fixed;  
     width: 100%;
-    z-index: 100;
+    z-index: 3;
     transition: all 0.3s;
 }
-#nav .container {
+#navbar .container {
     align-items: center;
     height: 120px;
 }
-nav a {
-    margin-left: 45px;
+.nav-btn {
+	width: 40px;
+	height: 40px;
+	z-index:4;
+    display: none;
+    position: fixed;
+    right: 10px;
+    top:10px;
+	overflow: hidden;
 }
+.nav-btn span {
+	width: 40px;
+	height: 3px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+}
+.nav-btn span:nth-of-type(2) {
+	top: calc(50% - 9px);
+}
+.nav-btn span:nth-of-type(3) {
+	top: calc(50% + 9px);
+}
+.nav-btn.active span:nth-of-type(1) {
+    display: none;
+  }
+  .nav-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);  
+  }
+  .nav-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg); 
+  }
+nav ul {
+    display: flex;
+    gap:45px
+}
+
 .logo {
     font-weight: 500;
     text-transform: uppercase;
@@ -415,6 +457,41 @@ img[src="./img/visa-mastercard 1.png"] {
     
 }
 @media (max-width: 845px){
+    #navbar {
+        width:100vw;
+        height:100vh;
+        font-size: 18px;
+        
+    }
+    #navbar.active{
+        background-color: white;
+    }
+    #navbar.active .container{
+        display: flex;
+    }
+    #navbar .container{
+        display:flex;
+        flex-direction:column;
+        justify-content: space-evenly;
+        height: 100%;
+        display: none; 
+    }
+    nav ul{
+        flex-direction:column;
+        justify-content: space-between;
+        padding: 0px;
+    }
+    .nav-btn{
+        display: block;
+        
+    }
+    .logo{
+        left:0px;
+    }
+    header{
+        padding-top: 0px;
+        height: 100vh;
+    }
     .headerImg{
         display: none;
     }
@@ -426,8 +503,11 @@ img[src="./img/visa-mastercard 1.png"] {
         margin: 0 auto;
         text-align: center;
     }
+    .headerInfo h1{
+        margin-bottom: 20px;
+    }
     .openShopButton{
-        margin: 0 auto;
+        margin: 40px auto 0px;
     }
     header .container{
         justify-content: center;
