@@ -1,18 +1,19 @@
 document.addEventListener("DOMContentLoaded", function(){
   let nav = document.getElementById("navbar");
   window.addEventListener('scroll', function() {
-    if(window.scrollY != 0 && nav.style.backgroundColor != "white" && window.screen.width > 845){
+    
+    if(window.scrollY != 0 && nav.style.backgroundColor != "white"){
       nav.style.backgroundColor = "white";
+      console.log("yes");
     }else if(window.scrollY == 0 ) {
       nav.style.backgroundColor = ""
     };
   });
   let navBtn = document.querySelector('.nav-btn');
-  let navMenu = document.querySelector('#navbar');
   navBtn.addEventListener('click', function(){
-    console.log("yes")
     navBtn.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    nav.classList.toggle('active');
+
   });
   $('.slider-for').slick({
     infinite: true,
