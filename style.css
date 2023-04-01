@@ -458,13 +458,13 @@ img[src="./img/visa-mastercard 1.png"] {
 }
 @media (max-width: 845px){
     #navbar {
-        width:100vw;
-        height:100vh;
         font-size: 18px;
-        
+        min-height: 60px;
     }
+
     #navbar.active{
         background-color: white;
+        height:100vh;
     }
     #navbar.active .container{
         display: flex;
