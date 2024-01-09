@@ -80,7 +80,7 @@ a:not(.btn):hover::after {
 }
 .container{
     max-width: 1100px;
-    padding: 0 5px;
+    padding: 0 30px;
     margin-right: auto;
     margin-left: auto;
 }

@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(){
   //добавление фона nav при скролле
   let nav = document.getElementById("navbar");
+
+  nav.style.backgroundColor = "";
+  if (nav.classList.contains('active')){
+    navBtn.classList.remove('active');
+    nav.classList.remove('active');
+  }
+  
+
   window.addEventListener('scroll', function() {
     if(window.scrollY != 0 && nav.style.backgroundColor != "white"){
       nav.style.backgroundColor = "white";
@@ -40,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
         pageSelect.append(pageButton);
       }
     }
+    
     //Нажатие на кнопки страниц
     function makeOnclickPageEvent(){
       for (let i = 0; i < pageSelect.children.length; i++) {
