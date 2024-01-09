@@ -3,7 +3,7 @@
     font-size:16px
 }
 * {
-    margin:0;
+    margin: 0px;
     letter-spacing: 0.02em;
     font-family: 'Raleway', sans-serif;
 }
@@ -46,7 +46,16 @@ h3{
     font-size: 1.5em;
     line-height: 140%;  
 }
-a {
+button{
+    background-color: #fff;
+    border: 1px solid black;
+}
+button.active{
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+a, button{
     text-decoration:none;
     color: black;
     transition: all 0.3s;
@@ -84,9 +93,12 @@ a:not(.btn):hover::after {
     flex-direction: column;
     height: 100%;
 }
-header, section {
+header, section, main{
     margin-bottom: 130px;
     
+}
+.gray{
+    color: gray;
 }
 /* slider */
 .slider{
@@ -206,13 +218,13 @@ nav ul {
 header { 
     
     background: linear-gradient(to left, #F1EADC 45%  ,#F1EADC 460px, white 460px 55%);
+}
+header,main{
     padding-top: 120px;
     
 }
-
 .headerInfo {
     padding: 145px 0px;
-    
     position: relative;
     display: flex;
     flex-direction:column;
@@ -292,7 +304,9 @@ section h2{
 .cataloge {
     margin-bottom: 65px;
     text-align:center ;
-    gap: 10px;
+    flex-wrap: wrap;
+    row-gap: 65px;
+    column-gap: 10px;
 }
 .catalogeItem{
     position: relative;
@@ -334,12 +348,9 @@ section h2{
     margin-bottom: 7px;
 }
 .catalogeButton{
-    width: 243px;
-    height: 68px;
-   
     margin-left: auto;
     margin-right: auto;
-
+    width: max-content;
     color: #6E9C9F;
     border: 1px solid #6E9C9F;
     transition: all 0.3s;
@@ -348,7 +359,8 @@ section h2{
     color: white;
     background-color: #6E9C9F;
 }
-.catalogeButton a{
+.catalogeButton a, button{
+    padding: 22px 50px;
     display: flex;
     height: 100%;
     align-items: center;
@@ -436,6 +448,49 @@ img[src="./img/visa-mastercard 1.png"] {
     width: 68px;
     height: 22px;
 }
+/*store page*/
+#filter{
+    display: flex;
+    gap:10px;
+}
+.mainName{
+    margin: 190px 0px 214px;
+}
+.numberOfGoods{
+margin: 92px 0px 65px;
+}
+.numberOfGoods:nth-child(5){
+    margin-top:0px;
+}
+.page{
+    display: flex;
+    margin: 0 auto;
+    width: max-content;
+    gap: 14px;
+}
+#pageSelect{
+    display: flex;
+    gap: 14px;
+}
+.page > button{
+    padding: 0px;
+    border: 0px;
+    align-self: center;
+}
+.miniBtn{
+    padding: 0px;
+    width: 41px;
+    height: 41px;
+}
+#pageArrow img {
+    width: 25px;
+}
+#notHaveGoods{
+    display: none;
+    text-align: center;
+    font-size: 1.3em;
+}
+
 /* adaptive */
 @media (max-width: 985px){
     :root{
@@ -515,7 +570,6 @@ img[src="./img/visa-mastercard 1.png"] {
     header{
         background: linear-gradient(to left, #F1EADC 50%  , white 50%);
     }
-
     .navLinks{
         margin: 0px;
     }
@@ -597,3 +651,4 @@ img[src="./img/visa-mastercard 1.png"] {
     } 
     
  }
+
